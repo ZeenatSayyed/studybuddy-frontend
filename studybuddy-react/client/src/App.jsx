@@ -23,3 +23,4 @@ export default function App() {
     </AppProvider>
   )
 }
+console.log("NEW BUILD DEPLOYED");
