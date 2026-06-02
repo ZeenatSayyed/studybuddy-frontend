@@ -1,4 +1,4 @@
 export const API = "https://studybuddy-backend-1-yhda.onrender.com";
-import { API_URL } from "./config";
+import { API } from "./config";
 
-axios.get(`${API_URL}/api/users`);
+axios.get(`${API}/users`);

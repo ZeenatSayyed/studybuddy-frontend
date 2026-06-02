@@ -92,7 +92,14 @@ export default function AuthScreen() {
     if (!loginEmail || !loginPass) return setLoginMsg({ text:'Enter email and password.', type:'error' })
     setLoginLoading(true); setLoginMsg({ text:'Signing in...', type:'' })
     try {
-      const res  = await fetch(`${API}/login`, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({ email:loginEmail, password:loginPass }) })
+      const res = await fetch("https://studybuddy-backend-1-yhda.onrender.com/login", {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    email: loginEmail,
+    password: loginPass
+  })
+});
       const data = await res.json()
       if (!res.ok) throw new Error(data.message || 'Login failed')
       login(data.token, data.user)
