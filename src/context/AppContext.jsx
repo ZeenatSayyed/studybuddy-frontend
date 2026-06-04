@@ -18,7 +18,8 @@ export function AppProvider({ children }) {
     localStorage.setItem('sb_theme', theme)
   }, [theme])
 
-  const API = '/api'
+  const API = "https://studybuddy-backend-1-yhda.onrender.com"
+  
 
   const apiFetch = (path, method = 'GET', body = null) => {
     const opts = {

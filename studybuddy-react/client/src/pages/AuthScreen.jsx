@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { useApp } from '../context/AppContext'
 
-const API = '/api'
+const API = "https://studybuddy-backend-1-yhda.onrender.com"
+
 
 function FloatingShapes() {
   const shapes = [
