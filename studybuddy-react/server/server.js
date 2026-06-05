@@ -24,7 +24,10 @@ app.use(express.json());
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+  serverSelectionTimeoutMS: 30000,
+  socketTimeoutMS: 45000,
+})
   .then(() => console.log("MongoDB Connected ✅"))
   .catch(err => console.log(err));
 
